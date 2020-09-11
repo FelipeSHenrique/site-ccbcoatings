@@ -68,6 +68,22 @@ export const InfoHeader = styled.div`
 export const SectionProducts = styled.section`
   max-width: 1154px;
   margin: 70px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  >a {
+    display: block;
+    width: 214px;
+    padding: 12px 14px;
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--color-yellow);
+    margin-top: 51px;
+  }
 `;
 
 export const Cards = styled.div`
@@ -75,8 +91,15 @@ export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 51px;
+
+  @media (max-width: 1178px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 2%;
+  }
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    padding: 0px 2%;
   }
 `;
 

@@ -15,7 +15,7 @@ export const StyleBurger = styled.div`
   justify-content: space-around;
   flex-flow: column nowrap;
   position: fixed;
-  top: 10px;
+  top: 25px;
   right: 10px;
   z-index: 22;
 

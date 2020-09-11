@@ -21,19 +21,19 @@ function MenuMobile() {
       <WrapperMenuMobile open={open}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">início</Link>
           </li>
           <li>
-            <Link to="/sobre">About</Link>
+            <Link to="/sobre">sobre nós</Link>
           </li>
           <li>
-            <Link to="/produtos">Products</Link>
+            <Link to="/produtos">produtos</Link>
           </li>
           <li>
             <Link to="/sustentabilidade">sustentabilidade</Link>
           </li>
           <li>
-            <Link to="/contato">Contact</Link>
+            <Link to="/contato">contato</Link>
           </li>
         </ul>
       </WrapperMenuMobile>

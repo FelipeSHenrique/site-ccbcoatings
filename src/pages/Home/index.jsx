@@ -75,12 +75,13 @@ function Home() {
       <Menu />
 
       <SectionProducts>
-        <Titles title="o que nós fazemos" subTitle="nossos serviços" />
+        <Titles title="o que nós fazemos" subTitle="nossos produtos" />
         <Cards>
           <CardHome icon={iconWB} title="linha base wb" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
           <CardHome icon={iconUV} title="linha uv" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
           <CardHome icon={iconPU} title="linha pu" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
         </Cards>
+        <a href="/produtos">VER MAIS PRODUTOS</a>
       </SectionProducts>
 
       <SectionMessage>

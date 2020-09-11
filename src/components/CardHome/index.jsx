@@ -8,7 +8,7 @@ function CardHome({ icon, title, info }) {
       <img src={icon} alt={title} />
       <h2>{title}</h2>
       <p>{info}</p>
-      <a href="/produtos">saiba mais</a>
+      {/* <a href="/produtos">saiba mais</a> */}
     </Container>
   );
 }
