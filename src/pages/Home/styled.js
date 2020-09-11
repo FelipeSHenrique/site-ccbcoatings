@@ -263,6 +263,13 @@ export const ImgItens = styled.div`
   img {height: 50px;}
 `;
 
+// MAPS
 
+export const SectionMaps = styled.div`
+  iframe {
+    width: 100%;
+    height: 356px;
+  }
+`;
 
 
