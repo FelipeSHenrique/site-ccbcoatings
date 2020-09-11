@@ -24,7 +24,7 @@ function FooterContact() {
 
         <Address>
           <IconEarth />
-          <p>Rodovia do Caqui, 2443, Campina Grande do Sul - PR <br />
+          <p>Rodovia do Caqui, 2443, Campina Grande do Sul - PR /
           83430-000</p>
         </Address>
 

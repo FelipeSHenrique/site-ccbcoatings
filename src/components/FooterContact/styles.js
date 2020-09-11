@@ -15,12 +15,13 @@ export const WrapperFooter = styled.div`
   align-items: center; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 33px 2%;
+  padding: 33px 0;
 
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-gap: 38px;
+    padding: 33px 2%;
   }
 `;
 
@@ -39,7 +40,7 @@ export const Address = styled.div`
   p {
     font-size: 16px;
     color: var(--color-white);
-    margin-left: 30px;
+    margin-left: 20px;
   }
 
   @media (max-width: 768px) {
@@ -55,6 +56,7 @@ export const IconEarth = styled(GiEarthAmerica)`
 
 export const SocialNetWork = styled.div`
   justify-self: end;
+  align-self: center;
 
   @media (max-width: 768px) {
     justify-self: center;
