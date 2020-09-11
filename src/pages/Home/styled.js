@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import backgroundHeader from '../../assets/image/background-header.png';
 import backgroundMessage from '../../assets/image/background-message.png';
 import bgElements from '../../assets/image/bg-elements.png';
+import bgCompanies from '../../assets/image/bg-em.png';
 
 
 const plink = keyframes`
@@ -238,6 +239,28 @@ export const GradientHorizontalBg = styled.div`
   @media (max-width: 768px) {
     padding: 20px 15px;
   }
+`;
+
+// SECTION CAMPANIES
+
+export const SectionCompanies = styled.section`
+  background-image: url(${bgCompanies});
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* overflow: hidden; */
+`;
+
+export const WrapperImages = styled.div`
+  max-width: 1154px;
+  margin: 0px auto;
+  padding: 71px 0;
+  display: flex;
+`;
+
+export const ImgItens = styled.div`
+  margin-right: 70px;
+  img {height: 50px;}
 `;
 
 

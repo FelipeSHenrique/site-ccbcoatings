@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Marquee from 'react-marquee-slider';
 
 import {
   Container,
@@ -13,7 +15,10 @@ import {
   WrapperElements,
   SectionTecnology,
   SectionQuality,
-  GradientHorizontalBg
+  GradientHorizontalBg,
+  SectionCompanies,
+  WrapperImages,
+  ImgItens
 } from './styled';
 
 import ButtonMore from '../../components/ButtonMore';
@@ -24,43 +29,43 @@ import CardHome from '../../components/CardHome';
 import iconWB from '../../assets/image/icons/WB.png';
 import iconUV from '../../assets/image/icons/UV.png';
 import iconPU from '../../assets/image/icons/pu.png';
-import iconPisos from '../../assets/image/icons/pisos.png';
-import iconResinas from '../../assets/image/icons/RESINA.png';
-import iconTingidores from '../../assets/image/icons/TINGIDOR.png';
 import iconTec from '../../assets/image/icons/tec.png';
 import iconQuality from '../../assets/image/icons/quality.png';
+
+import imgEucatex from '../../assets/image/logo-eucatex.svg';
+import imgIndusparquet from '../../assets/image/logo-indusparquet.svg';
+import imgMasterpiso from '../../assets/image/logo-masterpiso.svg';
+import imgRudnick from '../../assets/image/logo-rudnick.png';
 
 function Home() {
 
   const titulo = useRef(null);
 
-  // useEffect(() => {
+  useLayoutEffect(() => {
 
-  //   var words = ['revestimentos', 'tecnologia', 'eficiência', 'qualidade', 'sustentabilidade'];
-  //   var indexWord = 0;
-  //   var indexChar = 0;
+    var words = ['revestimentos', 'tecnologia', 'eficiência', 'qualidade', 'sustentabilidade'];
+    var indexWord = 0;
+    var indexChar = 0;
 
-  //   function run() {
-  //     setInterval(() => {
-  //       let teste1 = titulo.current;
-  //       console.log(teste1)
-  //       if (teste1 === null) {
-  //         teste1.innerText = "padrão";
-  //       }
-  //       if (indexChar < words[indexWord].length) {
-  //         indexChar++;
-  //         teste1.innerText = words[indexWord].substr(0, indexChar);
-  //       } else if (indexWord < words.length - 1) {
-  //         indexWord++; indexChar = 0;
-  //       } else {
-  //         indexWord = 0; indexChar = 0;
-  //       }
-  //     }, 200);
-  //   }
+    function run(el) {
+      setInterval(() => {
+        if (indexChar < words[indexWord].length) {
+          indexChar++;
+          el.innerText = words[indexWord].substr(0, indexChar);
+        } else if (indexWord < words.length - 1) {
+          indexWord++; indexChar = 0;
+        } else {
+          indexWord = 0; indexChar = 0;
+        }
+      }, 200);
+    }
 
-  //   run();
+    if (null !== titulo.current) {
+      run(titulo.current);
+    }
 
-  // }, []);
+  }, []);
+
 
   return (
     <Container>
@@ -81,7 +86,7 @@ function Home() {
           <CardHome icon={iconUV} title="linha uv" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
           <CardHome icon={iconPU} title="linha pu" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
         </Cards>
-        <a href="/produtos">VER MAIS PRODUTOS</a>
+        <Link to="/produtos">VER MAIS PRODUTOS</Link>
       </SectionProducts>
 
       <SectionMessage>
@@ -130,6 +135,25 @@ function Home() {
 
         </WrapperElements>
       </SectionElements>
+
+      <SectionCompanies>
+        <WrapperImages>
+          <Marquee velocity={40} minScale={0.7}>
+            <ImgItens>
+              <img src={imgEucatex} alt="Eucatex" />
+            </ImgItens>
+            <ImgItens>
+              <img src={imgIndusparquet} alt="Indusparquet" />
+            </ImgItens>
+            <ImgItens>
+              <img src={imgMasterpiso} alt="Masterpiso" />
+            </ImgItens>
+            <ImgItens>
+              <img src={imgRudnick} alt="Rudnick" />
+            </ImgItens>
+          </Marquee>
+        </WrapperImages>
+      </SectionCompanies>
 
     </Container>
   );

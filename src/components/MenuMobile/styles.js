@@ -8,31 +8,25 @@ export const Container = styled.div`
 `;
 
 export const StyleBurger = styled.div`
-  padding: 10px;
-  background: var(--color-transparent);
-  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
-  position: fixed;
-  top: 25px;
-  right: 10px;
+  position: relative;
   z-index: 22;
-
-  div + div {
-    margin-top: 8px;
-  }
+  margin-right: 15px;
 
   div {
-    width: 29px;
-    height: 3px;
+    width: 2rem;
+    height: 0.25rem;
     background: ${({ open }) => open ? 'var(--color-yellow)' : 'var(--color-white)'};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
 
     &:nth-child(1) {
-      transform: ${({ open }) => open ? 'rotate(52deg)' : 'rotate(0)'};
+      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
     }
 
     &:nth-child(2) {
@@ -40,7 +34,7 @@ export const StyleBurger = styled.div`
     }
 
     &:nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-52deg)' : 'rotate(0)'};
+      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
   }
 `;
