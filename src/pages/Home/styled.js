@@ -21,6 +21,10 @@ export const Container = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 `;
 
 export const GradientHorizontal = styled.div`

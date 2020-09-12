@@ -1,11 +1,17 @@
 import React from 'react';
 
-import { Container } from './styled';
+import { Container, BgToLogo, WrapperAllContent } from './styled';
+
+import Menu from '../../components/Menu';
 
 function Products() {
   return (
     <Container>
-      <h1>PRODUCTS</h1>
+      <BgToLogo />
+      <WrapperAllContent>
+        <Menu />
+
+      </WrapperAllContent>
     </Container>
   );
 }

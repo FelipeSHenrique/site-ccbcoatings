@@ -5,10 +5,11 @@ export const Container = styled.div`
   justify-content: center;
   padding: 1.5% 0px;
   background: var(--color-transparent);
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   left: 0;
+  z-index: 100;
 
   @media (max-width: 768px) {
     position: fixed;
@@ -16,6 +17,7 @@ export const Container = styled.div`
     background: var(--color-dark);
     justify-content: space-between;
     align-items: center;
+    
   }
 `;
 
