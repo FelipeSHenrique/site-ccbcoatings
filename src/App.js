@@ -9,16 +9,12 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Sustainability from './pages/Sustainability';
 import Contact from './pages/Contact';
-import HeaderLogo from './components/HeaderLogo';
 
 function App() {
 
   return (
     <BrowserRouter>
       <Container>
-
-        <HeaderLogo />
-
 
         <Switch>
           <Route path="/" exact component={Home} />

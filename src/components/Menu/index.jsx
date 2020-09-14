@@ -28,7 +28,7 @@ function Menu() {
             <Link to="/">início</Link>
           </li>
           <li>
-            <Link to="/sobre">sobre nós</Link>
+            <Link to="/sobre">sobre</Link>
           </li>
           <li>
             <Link to="/produtos">produtos</Link>

@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   Container,
+  WrapperGradient,
   ImageLogo
 } from './styles';
 
@@ -11,8 +12,10 @@ import MenuMobile from '../MenuMobile';
 function HeaderLogo() {
   return (
     <Container>
-      <ImageLogo src={logoCCB} />
-      <MenuMobile />
+      <WrapperGradient>
+        <ImageLogo src={logoCCB} />
+        <MenuMobile />
+      </WrapperGradient>
     </Container>
   );
 }

@@ -16,15 +16,43 @@ const plink = keyframes`
 `;
 
 export const Container = styled.div`
+  
+`;
+
+export const WrapperLogoHome = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 1.5% 0px;
+  background: var(--color-transparent);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    z-index: 100;
+    background: var(--color-dark);
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+`;
+
+export const ImageLogo = styled.img`
+    min-width: 10%;
+    @media (max-width: 768px) {
+      width: 40%;
+    }
+`;
+
+export const HeaderHome = styled.header`
   height: 100vh;
   background: url(${backgroundHeader});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
 `;
 
 export const GradientHorizontal = styled.div`
@@ -252,7 +280,6 @@ export const SectionCompanies = styled.section`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* overflow: hidden; */
 `;
 
 export const WrapperImages = styled.div`

@@ -1,14 +1,15 @@
 import React from 'react';
+import HeaderLogo from '../../components/HeaderLogo';
 import Menu from '../../components/Menu';
 
-import { Container, BgToLogo, WrapperAllContent } from './styled';
+import { Container, WrapperAllContent } from './styled';
 
 function About() {
   return (
     <Container>
-      <BgToLogo />
+      <HeaderLogo />
+      <Menu />
       <WrapperAllContent>
-        <Menu />
 
       </WrapperAllContent>
     </Container>

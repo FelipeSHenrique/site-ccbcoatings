@@ -4,6 +4,9 @@ import Marquee from 'react-marquee-slider';
 
 import {
   Container,
+  WrapperLogoHome,
+  ImageLogo,
+  HeaderHome,
   GradientHorizontal,
   InfoHeader,
   SectionProducts,
@@ -27,6 +30,7 @@ import Titles from '../../components/Titles';
 import Menu from '../../components/Menu';
 import CardHome from '../../components/CardHome';
 import FooterContact from '../../components/FooterContact';
+import MenuMobile from '../../components/MenuMobile';
 
 import iconWB from '../../assets/image/icons/WB.png';
 import iconUV from '../../assets/image/icons/UV.png';
@@ -38,6 +42,7 @@ import imgEucatex from '../../assets/image/logo-eucatex.svg';
 import imgIndusparquet from '../../assets/image/logo-indusparquet.svg';
 import imgMasterpiso from '../../assets/image/logo-masterpiso.svg';
 import imgRudnick from '../../assets/image/logo-rudnick.png';
+import logoCCB from '../../assets/image/logo-ccb.png';
 
 function Home() {
 
@@ -72,12 +77,19 @@ function Home() {
   return (
     <Container>
 
-      <GradientHorizontal>
-        <InfoHeader>
-          <h1 ref={titulo} >revestimentos</h1>
-          <ButtonMore />
-        </InfoHeader>
-      </GradientHorizontal>
+      <WrapperLogoHome>
+        <ImageLogo src={logoCCB} />
+        <MenuMobile />
+      </WrapperLogoHome>
+
+      <HeaderHome>
+        <GradientHorizontal>
+          <InfoHeader>
+            <h1 ref={titulo} >revestimentos</h1>
+            <ButtonMore />
+          </InfoHeader>
+        </GradientHorizontal>
+      </HeaderHome>
 
       <Menu />
 
