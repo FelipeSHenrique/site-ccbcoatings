@@ -1,8 +1,22 @@
 import React from 'react';
+
 import HeaderLogo from '../../components/HeaderLogo';
 import Menu from '../../components/Menu';
+import Titles from '../../components/Titles';
+import FooterContact from '../../components/FooterContact';
 
-import { Container, WrapperAllContent } from './styled';
+import infoImage from '../../assets/image/entrada-ccb.png';
+
+import {
+  Container,
+  WrapperAllContent,
+  SectionAbout,
+  ContainerAbout,
+  WrapperAbout,
+  InfoAbout,
+  InfoImage,
+  BgImage
+} from './styled';
 
 function About() {
   return (
@@ -10,7 +24,30 @@ function About() {
       <HeaderLogo />
       <Menu />
       <WrapperAllContent>
+        <Titles title="sobre nós" subTitle="ccb coatings" />
 
+        <SectionAbout>
+          <ContainerAbout>
+
+            <WrapperAbout>
+
+              <InfoAbout>
+                <h3>quem somos</h3>
+                <p>Há 30 anos a CCB Coatings uma das tops teen no mercado com tecnologia e soluções inovadoras no fornecimento de revestimentos em vernizes e tintas, para a indústria de móveis, pisos in wood, e em substratos diversos.
+                Não apenas dispomos da melhor tecnologia em nossos produtos, mas também as melhores soluções em aplicação, logística e suporte técnico.</p>
+              </InfoAbout>
+
+              <InfoImage src={infoImage} alt="ccb coatings" />
+
+            </WrapperAbout>
+
+          </ContainerAbout>
+
+          <BgImage />
+
+        </SectionAbout>
+
+        <FooterContact />
       </WrapperAllContent>
     </Container>
   );

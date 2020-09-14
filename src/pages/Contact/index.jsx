@@ -1,11 +1,18 @@
 import React from 'react';
 
-import { Container } from './styled';
+import HeaderLogo from '../../components/HeaderLogo';
+import Menu from '../../components/Menu';
+
+import { Container, WrapperAllContent } from './styled';
 
 function Contact() {
   return (
     <Container>
-      <h1>CONTACT</h1>
+      <HeaderLogo />
+      <Menu />
+      <WrapperAllContent>
+
+      </WrapperAllContent>
     </Container>
   );
 }

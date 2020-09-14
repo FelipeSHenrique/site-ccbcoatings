@@ -43,6 +43,7 @@ export const Container = styled.div`
     > img {
         margin-top: 32px;
         width: 270px;
+        border-radius: 6px;
     }
 
     > p {
@@ -67,8 +68,10 @@ export const Container = styled.div`
         position: relative;
         text-transform: uppercase;
         margin-top: 5px;
-
-        &::before {
+        border-bottom: 2px solid var(--color-grey);
+        line-height: 2;
+  
+        /* &::before {
           content: '';
           position: absolute;
           top: 50%;
@@ -90,7 +93,7 @@ export const Container = styled.div`
           height: 2px;
           margin-left: 14px;
           background: var(--color-grey);
-      }
+      } */
     }
 
 `;

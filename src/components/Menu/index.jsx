@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { Container, WrapperMenu } from './styled';
 
 function Menu() {
+
 
   const [statusMenu, setStatusMenu] = useState(0);
 
@@ -25,19 +26,19 @@ function Menu() {
       <WrapperMenu>
         <ul>
           <li>
-            <Link to="/">início</Link>
+            <NavLink to="/" exact activeClassName="active">início</NavLink>
           </li>
           <li>
-            <Link to="/sobre">sobre</Link>
+            <NavLink to="/sobre" activeClassName="active">sobre</NavLink>
           </li>
           <li>
-            <Link to="/produtos">produtos</Link>
+            <NavLink to="/produtos" activeClassName="active">produtos</NavLink>
           </li>
           <li>
-            <Link to="/sustentabilidade">sustentabilidade</Link>
+            <NavLink to="/sustentabilidade" activeClassName="active">sustentabilidade</NavLink>
           </li>
           <li>
-            <Link to="/contato">contato</Link>
+            <NavLink to="/contato" activeClassName="active">contato</NavLink>
           </li>
         </ul>
       </WrapperMenu>

@@ -34,6 +34,6 @@ export const WrapperGradient = styled.div`
 export const ImageLogo = styled.img`
     min-width: 10%;
     @media (max-width: 768px) {
-      width: 40%;
+      width: 30%;
     }
 `;
