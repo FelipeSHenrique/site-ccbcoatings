@@ -36,8 +36,9 @@ export default createGlobalStyle`
     --color-green: #2EA54E;
     --color-grey: #CCCCCC;
     --color-info-text: #747373;
-    --color-transparent: rgba(0, 0, 0, .6);
     --color-transparent-weak: rgba(0, 0, 0, .43);
+    --color-transparent: rgba(0, 0, 0, .6);
+    --color-transparent-footer: rgba(0, 0, 0, .80);
   }
 
 `;

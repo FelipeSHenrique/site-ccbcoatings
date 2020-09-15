@@ -2,11 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: var(--color-dark);
-  /* position: ${({ statusmenu }) => statusmenu ? 'fixed' : 'static'};
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 20; */
 `;
 
 export const WrapperMenu = styled.nav`
