@@ -33,7 +33,7 @@ export const Container = styled.div`
 export const SectionProducts = styled.div`
 
   max-width: 1154px;
-  margin: 70px auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

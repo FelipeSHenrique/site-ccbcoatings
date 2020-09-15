@@ -7,6 +7,7 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
     text-transform: uppercase;
+    margin-top: 70px;
 
     > h1 {
         font-size: 45px;
@@ -43,6 +44,9 @@ export const Container = styled.div`
     }
 
     @media (max-width: 768px) {
+
+      margin-top: 120px;
+
       h1 {
         font-size: 30px;
       }
