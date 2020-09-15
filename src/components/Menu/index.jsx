@@ -5,24 +5,8 @@ import { Container, WrapperMenu } from './styled';
 
 function Menu() {
 
-
-  const [statusMenu, setStatusMenu] = useState(0);
-
-  const menuContent = useRef();
-
-  useEffect(() => {
-    const topMenu = menuContent.current.offsetTop;
-    document.addEventListener("scroll", () => {
-      const scrollCheck = window.scrollY > topMenu;
-      if (scrollCheck !== statusMenu) {
-        setStatusMenu(scrollCheck);
-      }
-    });
-  }, [statusMenu]);
-
-
   return (
-    <Container statusmenu={statusMenu} ref={menuContent}>
+    <Container>
       <WrapperMenu>
         <ul>
           <li>

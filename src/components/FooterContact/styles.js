@@ -4,15 +4,12 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 
 export const Container = styled.div`
-  background: var(--color-transparent);
+  background: var(--color-transparent-footer);
 `;
 
 export const WrapperFooter = styled.div`
   max-width: 1154px;
   margin: 0 auto;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 33px 0;
@@ -21,12 +18,12 @@ export const WrapperFooter = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-gap: 38px;
-    padding: 33px 2%;
+    padding: 33px 4%;
   }
 `;
 
 export const LogoCcb = styled.img`
-  height: 62px;
+  height: 55px;
 
   @media (max-width: 768px) {
     justify-self: center;
@@ -60,6 +57,7 @@ export const SocialNetWork = styled.div`
 
   @media (max-width: 768px) {
     justify-self: center;
+    align-self: center;
   }
 `;
 
@@ -67,7 +65,12 @@ const iconCSS = css`
   width: 32px;
   height: 32px;
   fill: var(--color-white);
-  margin-right: 29px;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &:hover {
+    fill: var(--color-yellow);
+  }
 `;
 
 export const IconFacebook = styled(FaFacebook)`${iconCSS}`;
