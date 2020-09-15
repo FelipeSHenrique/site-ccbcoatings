@@ -1,7 +1,33 @@
 import styled from 'styled-components';
+import LogoFooter from '../../assets/image/LogoFooter.png';
 
 export const Container = styled.div`
   
+  footer > .gradiente {
+    height: inherit;
+    background: var(--color-transparent-weak);
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    background-image: url(${LogoFooter});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .gradiente > h1 {
+    text-align: center;
+    font-size: 60px;
+    padding: 130px;
+    margin: 0 auto;
+    font-weight: 300;
+    color: white;
+    width: 80%;
+
+  }
+
 `;
 
 export const SectionProducts = styled.div`

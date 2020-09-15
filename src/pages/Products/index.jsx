@@ -13,6 +13,7 @@ import Menu from '../../components/Menu';
 import CardProducts from '../../components/CardProducts';
 import Titles from '../../components/Titles';
 import HeaderLogo from '../../components/HeaderLogo';
+import FooterContact from '../../components/FooterContact';
 
 function Products() {
   return (
@@ -33,6 +34,12 @@ function Products() {
 
           </Cards>
         </SectionProducts>
+        <footer>
+          <div className="gradiente">
+              <h1>RECEBA OS MELHORES PRODUTOS DA MAIOR QUALIDADE</h1>
+              <FooterContact />
+          </div>
+        </footer>
       </WrapperAllContent>
     </Container>
   );
