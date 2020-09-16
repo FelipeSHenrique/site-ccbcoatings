@@ -14,11 +14,19 @@ export const WrapperContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 25px;
-  margin-top: 70px;
+  margin: 70px 0;
+
+  @media (max-width: 1178px) {
+    padding: 0 2%;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 0 2%;
+  }
 `;
 
 export const WrapperInfoContact = styled.div`
-  flex: 1;
   background: var(--color-background-about);
   padding: 10px 30px 40px;
 `;
@@ -64,7 +72,6 @@ export const TextInfo = styled.h4`
 `;
 
 export const WrapperForm = styled.form`
-  flex: 1;
   display: flex;
   flex-direction: column;
   
@@ -73,6 +80,12 @@ export const WrapperForm = styled.form`
     padding: 10px 5px;
     border-radius: 6px;
     margin-bottom: 20px;
+    outline: none;
+  }
+
+  textarea {
+    height: 95px;
+    resize: none;
   }
 
   button {
@@ -85,6 +98,19 @@ export const WrapperForm = styled.form`
     text-transform: uppercase;
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    button {
+      align-self: center;
+    }
+  }
     
+`;
+
+export const SectionMaps = styled.div`
+  iframe {
+    width: 100%;
+    height: 356px;
+  }
 `;
 
