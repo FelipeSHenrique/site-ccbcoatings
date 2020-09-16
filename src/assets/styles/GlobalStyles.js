@@ -34,6 +34,7 @@ export default createGlobalStyle`
     --color-yellow: #EBBF0F;
     --color-red: #E51E21;
     --color-green: #2EA54E;
+    --color-green-dark: #1A963C;
     --color-grey: #CCCCCC;
     --color-info-text: #747373;
     --color-transparent-weak: rgba(0, 0, 0, .43);

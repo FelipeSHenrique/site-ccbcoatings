@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { Container, WrapperMenu } from './styled';
