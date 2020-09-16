@@ -29,8 +29,12 @@ function FooterContact() {
         </Address>
 
         <SocialNetWork>
-          <IconFacebook />
-          <IconInstagram />
+          <a href="https://www.facebook.com/pages/Ccb-Coatings/289542074888447" target="_blank">
+            <IconFacebook />
+          </a>
+          <a href="https://instagram.com/ccbcoatings?igshid=fpla6te4v7hw" target="_blank">
+            <IconInstagram />
+          </a>
           <IconWhatsapp />
         </SocialNetWork>
 

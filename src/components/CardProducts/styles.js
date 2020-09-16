@@ -7,10 +7,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @media(max-width: 768px){ 
-      padding: 35px;
-    }
     
     > h2 {
         text-transform: uppercase;
@@ -46,7 +42,7 @@ export const Container = styled.div`
 
     > img {
         margin-top: 32px;
-        width: 270px;
+        height: 171px;
         border-radius: 6px;
     }
 
@@ -74,30 +70,6 @@ export const Container = styled.div`
         margin-top: 5px;
         border-bottom: 2px solid var(--color-grey);
         line-height: 2;
-  
-        /* &::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: 100%;
-          display: inline-block;
-          width: 20px;
-          height: 2px;
-          margin-right: 14px;
-          background: var(--color-grey);  
-        }
-        
-        &::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 100%;
-          display: inline-block;
-          width: 20px;
-          height: 2px;
-          margin-left: 14px;
-          background: var(--color-grey);
-      } */
     }
 
 `;
