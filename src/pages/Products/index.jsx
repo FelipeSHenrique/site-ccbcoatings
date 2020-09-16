@@ -36,8 +36,8 @@ function Products() {
         </SectionProducts>
         <footer>
           <div className="gradiente">
-              <h1>RECEBA OS MELHORES PRODUTOS DA MAIOR QUALIDADE</h1>
-              <FooterContact />
+            <h1>RECEBA OS MELHORES PRODUTOS DA MAIOR QUALIDADE</h1>
+            <FooterContact />
           </div>
         </footer>
       </WrapperAllContent>

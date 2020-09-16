@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+
 import backgroundHeader from '../../assets/image/background-header.png';
 import backgroundMessage from '../../assets/image/background-message.png';
 import bgElements from '../../assets/image/bg-elements.png';
@@ -16,7 +17,7 @@ const plink = keyframes`
 `;
 
 export const Container = styled.div`
-  
+  overflow: hidden;
 `;
 
 export const WrapperLogoHome = styled.div`

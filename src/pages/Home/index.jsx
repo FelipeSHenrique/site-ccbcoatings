@@ -1,6 +1,8 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Marquee from 'react-marquee-slider';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
   Container,
@@ -47,6 +49,21 @@ import logoCCB from '../../assets/image/logo-ccb.png';
 function Home() {
 
   const titulo = useRef(null);
+  // Ref Animation
+
+  // Animation Section Elementos
+  const sectionElement = useRef(null);
+  const sectionQuali = useRef(null);
+  const sectionTecn = useRef(null);
+  // Animation Section Message
+  const sectionMsg = useRef(null);
+  const msgContent = useRef(null);
+  // Animation Services
+  const sectionProd = useRef(null);
+  const title = useRef(null);
+  const card1 = useRef(null);
+  const card2 = useRef(null);
+  const card3 = useRef(null);
 
   useLayoutEffect(() => {
 
@@ -73,6 +90,35 @@ function Home() {
 
   }, []);
 
+  // ANIMATION
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    console.log(title);
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: [
+          sectionProd.current,
+          sectionMsg.current,
+          sectionElement.current
+        ]
+      }
+    });
+    tl.from(title.current, { y: -300, opacity: 0, duration: 1 })
+      .from(card1.current, { x: -300, opacity: 0, duration: .5 })
+      .from(card2.current, { y: -300, opacity: 0, duration: .5 })
+      .from(card3.current, { x: 300, opacity: 0, duration: .5 })
+      .from(msgContent.current, { y: 300, opacity: 0, duration: 1 })
+      .from(sectionTecn.current, { x: 200, opacity: 0, duration: 1 })
+      .from(sectionQuali.current, { x: -200, opacity: 0, duration: 1 })
+
+    // sectionProd
+    // title
+    // card1
+    // card2card3
+  }, []);
+
 
   return (
     <Container>
@@ -93,20 +139,28 @@ function Home() {
 
       <Menu />
 
-      <SectionProducts>
-        <Titles title="o que nós fazemos" subTitle="nossos produtos" />
+      <SectionProducts ref={sectionProd}>
+        <div ref={title}>
+          <Titles title="o que nós fazemos" subTitle="nossos produtos" />
+        </div>
         <Cards>
-          <CardHome icon={iconWB} title="linha base wb" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
-          <CardHome icon={iconUV} title="linha uv" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
-          <CardHome icon={iconPU} title="linha pu" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
+          <div ref={card1}>
+            <CardHome icon={iconWB} title="linha base wb" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
+          </div>
+          <div ref={card2}>
+            <CardHome icon={iconUV} title="linha uv" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
+          </div>
+          <div ref={card3}>
+            <CardHome icon={iconPU} title="linha pu" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
+          </div>
         </Cards>
         <Link to="/produtos">VER MAIS PRODUTOS</Link>
       </SectionProducts>
 
-      <SectionMessage>
+      <SectionMessage ref={sectionMsg}>
 
         <GradientHorizontalMessage>
-          <WrapperMessage>
+          <WrapperMessage ref={msgContent}>
             <h2>perfeita</h2>
             <h3>experiência <br /> & serviço de alta qualidade</h3>
           </WrapperMessage>
@@ -114,10 +168,10 @@ function Home() {
 
       </SectionMessage>
 
-      <SectionElements>
+      <SectionElements ref={sectionElement}>
         <WrapperElements>
 
-          <SectionTecnology>
+          <SectionTecnology ref={sectionTecn}>
 
             <div className="col-bg-title">
               <GradientHorizontalBg>
@@ -132,7 +186,7 @@ function Home() {
 
           </SectionTecnology>
 
-          <SectionQuality>
+          <SectionQuality ref={sectionQuali}>
 
             <div className="col-info">
               <img src={iconQuality} alt="tecnologia" />
