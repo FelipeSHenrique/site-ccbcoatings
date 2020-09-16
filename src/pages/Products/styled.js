@@ -3,6 +3,7 @@ import LogoFooter from '../../assets/image/LogoFooter.png';
 
 export const Container = styled.div`
   
+  
   footer > .gradiente {
     height: inherit;
     background: var(--color-transparent-weak);
@@ -11,10 +12,12 @@ export const Container = styled.div`
   }
 
   footer {
+    width: 100%;
     background-image: url(${LogoFooter});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    margin-top: 5%;
   }
 
   .gradiente > h1 {
@@ -24,7 +27,17 @@ export const Container = styled.div`
     margin: 0 auto;
     font-weight: 300;
     color: white;
-    width: 80%;
+
+    @media(max-width: 768px){
+      font-size: 25px;
+      padding: 20px;
+    }
+
+    @media(max-width: 1178px){
+      font-size: 30px;
+      padding: 40px;
+
+    }
 
   }
 
@@ -32,13 +45,12 @@ export const Container = styled.div`
 
 export const SectionProducts = styled.div`
 
-  max-width: 1154px;
+  max-width: 1154px;  
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 `;
 
 export const Cards = styled.div`
@@ -49,12 +61,13 @@ export const Cards = styled.div`
 
   @media (max-width: 1178px) {
     grid-template-columns: 1fr 1fr;
-    padding: 0px 2%;
+    padding: 0 2%;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 0px 2%;
+    padding: 0 2%;
+
   }
 `;
 

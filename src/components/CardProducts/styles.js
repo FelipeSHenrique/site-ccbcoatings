@@ -7,6 +7,10 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media(max-width: 768px){ 
+      padding: 35px;
+    }
     
     > h2 {
         text-transform: uppercase;
