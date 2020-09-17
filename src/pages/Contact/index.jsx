@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { gsap } from "gsap";
 
 import HeaderLogo from '../../components/HeaderLogo';
 import Menu from '../../components/Menu';
@@ -22,15 +23,31 @@ import {
 } from './styled';
 
 function Contact() {
+
+  const title = useRef(null);
+  const wrapperContact = useRef(null);
+  const wrapperForm = useRef(null);
+
+  useEffect(() => {
+
+    let tl = gsap.timeline({ defaults: { duration: 1 } });
+    tl.from(title.current, { y: -100, stagger: .6, opacity: 0 })
+      .from(wrapperContact.current, { x: -300, opacity: 0, duration: .5 })
+      .from(wrapperForm.current, { x: 300, opacity: 0, duration: .5 });
+
+  }, []);
+
   return (
     <Container>
       <HeaderLogo />
       <Menu />
       <WrapperAllContent>
-        <Titles title="contato" subTitle="ccb coatings" />
+        <div ref={title}>
+          <Titles title="contato" subTitle="ccb coatings" />
+        </div>
 
         <WrapperContainer>
-          <WrapperInfoContact>
+          <WrapperInfoContact ref={wrapperContact}>
 
             <EmailContact>
               <IconEmail />
@@ -52,7 +69,7 @@ function Contact() {
 
           </WrapperInfoContact>
 
-          <WrapperForm>
+          <WrapperForm ref={wrapperForm}>
             <input type="text" placeholder="Nome" />
             <input type="text" placeholder="Email" />
             <input type="text" placeholder="Assunto" />
