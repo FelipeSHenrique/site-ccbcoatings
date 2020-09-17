@@ -34,9 +34,9 @@ import CardHome from '../../components/CardHome';
 import FooterContact from '../../components/FooterContact';
 import MenuMobile from '../../components/MenuMobile';
 
-import iconWB from '../../assets/image/icons/WB.png';
-import iconUV from '../../assets/image/icons/UV.png';
-import iconPU from '../../assets/image/icons/pu.png';
+import iconWB from '../../assets/image/icons/WB.svg';
+import iconUV from '../../assets/image/icons/UV.svg';
+import iconPU from '../../assets/image/icons/pu.svg';
 import iconTec from '../../assets/image/icons/tec.png';
 import iconQuality from '../../assets/image/icons/quality.png';
 
