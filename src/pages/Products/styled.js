@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import LogoFooter from '../../assets/image/LogoFooter.png';
 
 export const Container = styled.div`
-  
+  overflow: hidden;
   
   footer > .gradiente {
     height: inherit;

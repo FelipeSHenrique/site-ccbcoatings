@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import bgImage from '../../assets/image/bg-about.png';
 
 export const Container = styled.div`
-  
+  overflow: hidden;
 `;
 
 export const WrapperAllContent = styled.div`

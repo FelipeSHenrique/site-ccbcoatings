@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { AiOutlineMail, AiOutlinePhone, AiFillEnvironment } from "react-icons/ai";
 
 export const Container = styled.div`
-  
+  overflow: hidden;
 `;
 
 export const WrapperAllContent = styled.div`

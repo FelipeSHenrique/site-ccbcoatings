@@ -4,7 +4,7 @@ import { GiEarthAmerica } from "react-icons/gi";
 import bgImage from '../../assets/image/bg-sustentabilidade.png';
 
 export const Container = styled.div`
-  
+  overflow: hidden;
 `;
 
 export const WrapperAllContent = styled.div`

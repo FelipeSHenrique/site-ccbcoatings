@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { gsap } from "gsap";
 
 import HeaderLogo from '../../components/HeaderLogo';
 import Menu from '../../components/Menu';
@@ -18,24 +19,41 @@ import {
 } from './styled';
 
 function Sustainability() {
+
+  const title = useRef(null);
+  const wrapper = useRef(null);
+  const imgEarth = useRef(null);
+  const infoText = useRef(null);
+
+  useEffect(() => {
+
+    let tl = gsap.timeline({ defaults: { duration: 1 } });
+    tl.from(title.current, { y: -100, stagger: .6, opacity: 0 })
+      .from(wrapper.current, { x: 300, opacity: 0, duration: .5 })
+      .from(imgEarth.current, { opacity: 0 })
+      .from(infoText.current, { y: 300, opacity: 0, duration: .3 });
+
+  }, []);
+
   return (
     <Container>
       <HeaderLogo />
       <Menu />
       <WrapperAllContent>
-
-        <Titles title="SUSTENTABILIDADE" subTitle="ccb coatings" />
+        <div ref={title}>
+          <Titles title="SUSTENTABILIDADE" subTitle="ccb coatings" />
+        </div>
 
         <SectionSustainability>
           <ContainerSustainability>
 
-            <WrapperSustainability>
+            <WrapperSustainability ref={wrapper}>
 
-              <WrapperIcon>
+              <WrapperIcon ref={imgEarth}>
                 <IconEarth />
               </WrapperIcon>
 
-              <InfoSustainability>
+              <InfoSustainability ref={infoText}>
                 <p>Desde que foi criada, há 30 anos, a CCB Coatings carrega no seu DNA responsabilidade ambiental.</p>
 
                 <p>Temos a preocupação de atingir e demonstrar um desempenho ambiental correto, controlando os impactos de nossas atividades, produtos e serviços, levando em consideração em nossa política foco em objetivos ambientais. </p>
