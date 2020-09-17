@@ -101,7 +101,7 @@ export const InfoHeader = styled.div`
 
 export const SectionProducts = styled.section`
   max-width: 1154px;
-  margin: 70px auto;
+  margin: 0 auto 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;

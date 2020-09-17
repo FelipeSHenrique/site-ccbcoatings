@@ -92,31 +92,32 @@ function Home() {
 
   // ANIMATION
 
-  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    console.log(title);
+
+    gsap.registerPlugin(ScrollTrigger);
+
     let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: [
-          sectionProd.current,
-          sectionMsg.current,
-          sectionElement.current
-        ]
+        trigger: sectionProd.current,
+        toggleActions: "play reverse play reverse"
       }
     });
     tl.from(title.current, { y: -300, opacity: 0, duration: 1 })
       .from(card1.current, { x: -300, opacity: 0, duration: .5 })
       .from(card2.current, { y: -300, opacity: 0, duration: .5 })
-      .from(card3.current, { x: 300, opacity: 0, duration: .5 })
-      .from(msgContent.current, { y: 300, opacity: 0, duration: 1 })
-      .from(sectionTecn.current, { x: 200, opacity: 0, duration: 1 })
-      .from(sectionQuali.current, { x: -200, opacity: 0, duration: 1 })
+      .from(card3.current, { x: 300, opacity: 0, duration: .5 });
 
-    // sectionProd
-    // title
-    // card1
-    // card2card3
+    let tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionElement.current,
+        toggleActions: "play reverse play reverse"
+      }
+    });
+    tl2.from(msgContent.current, { y: 300, opacity: 0, duration: 1 })
+      .from(sectionTecn.current, { x: 200, opacity: 0, duration: 1 })
+      .from(sectionQuali.current, { x: -200, opacity: 0, duration: 1 });
+
   }, []);
 
 
