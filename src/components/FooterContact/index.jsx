@@ -12,7 +12,8 @@ import {
   IconWhatsapp
 } from './styles';
 
-import logoCCB from '../../assets/image/logo-ccb.svg';
+// import logoCCB from '../../assets/image/logo-ccb.svg';
+import logoCCB from '../../assets/image/logo-ccb.png';
 
 function FooterContact() {
   return (

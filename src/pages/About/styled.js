@@ -37,7 +37,7 @@ export const WrapperAbout = styled.div`
   max-width: 1154px;
   margin: 0 auto;
   background: var(--color-background-about);
-  padding: 100px 44px;
+  padding: 100px 50px;
   position: relative;
   z-index: 1;
 
@@ -50,7 +50,7 @@ export const WrapperAbout = styled.div`
 `;
 
 export const InfoAbout = styled.div`
-    padding-right: 144px;
+    padding-right: 100px;
     display: flex;
     flex-direction: column;
 
@@ -100,7 +100,7 @@ export const InfoAbout = styled.div`
 `;
 
 export const InfoImage = styled.img`
-
+  width: 100%;
 @media (max-width: 1000px) {
     display: none;
 }

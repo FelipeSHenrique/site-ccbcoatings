@@ -31,7 +31,7 @@ function Sustainability() {
     tl.from(title.current, { y: -100, stagger: .6, opacity: 0 })
       .from(wrapper.current, { x: 300, opacity: 0, duration: .5 })
       .from(imgEarth.current, { opacity: 0 })
-      .from(infoText.current, { y: 300, opacity: 0, duration: .3 });
+      .from(infoText.current, { opacity: 0 });
 
   }, []);
 

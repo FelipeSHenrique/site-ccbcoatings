@@ -103,7 +103,7 @@ function Home() {
         toggleActions: "play reverse play reverse"
       }
     });
-    tl.from(title.current, { y: -300, opacity: 0, duration: 1 })
+    tl.from(title.current, { x: -300, opacity: 0, duration: 1 })
       .from(card1.current, { x: -300, opacity: 0, duration: .5 })
       .from(card2.current, { y: -300, opacity: 0, duration: .5 })
       .from(card3.current, { x: 300, opacity: 0, duration: .5 });

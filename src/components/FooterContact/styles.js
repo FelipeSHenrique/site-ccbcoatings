@@ -54,6 +54,9 @@ export const IconEarth = styled(GiEarthAmerica)`
 export const SocialNetWork = styled.div`
   justify-self: end;
   align-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 
   @media (max-width: 768px) {
     justify-self: center;
@@ -65,7 +68,6 @@ const iconCSS = css`
   width: 32px;
   height: 32px;
   fill: var(--color-white);
-  margin-right: 20px;
   cursor: pointer;
 
   &:hover {
