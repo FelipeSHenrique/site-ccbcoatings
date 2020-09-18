@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { gsap } from "gsap";
 
 import {
   Container,
@@ -17,6 +18,16 @@ import FooterContact from '../../components/FooterContact';
 
 function Products() {
 
+  const allCards = useRef(null);
+  const title = useRef(null);
+
+  useEffect(() => {
+
+    gsap.from(title.current, { x: -300, stagger: .6, opacity: 0 });
+    gsap.from(allCards.current, { x: -300, opacity: 0, duration: .5 });
+
+  }, []);
+
   return (
     <Container>
       <HeaderLogo />
@@ -26,25 +37,14 @@ function Products() {
           <div>
             <Titles title="Produtos" subTitle="ccb coatings" />
           </div>
-          <Cards>
-            <div>
-              <CardProducts icon={baldeTeste} title="linha pisos" list={["PISOS DE MADEIRA", "PISOS DE ALTO PADRÃO", "PISOS ISOLANTE ÁGUA", "PISOS OXIDO DE ALUMINIO"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            </div>
-            <div>
-              <CardProducts icon={baldeTeste} title="linha wb" list={["ISOLANTES BASE ÁGUA", "PRIMER BASE ÁGUA", "TINGIDORES BASE ÁGUA"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            </div>
-            <div>
-              <CardProducts icon={baldeTeste} title="tingidores" list={["PISOS DE MADEIRA", "PISOS DE ALTO PADRÃO", "PISOS ISOLANTE ÁGUA", "PISOS OXIDO DE ALUMINIO"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            </div>
-            <div>
-              <CardProducts icon={baldeTeste} title="linha uv" list={["PRIMER’S UV", "TINGIDORES UV", "TINTAS DE IMPRESSÃO UV", "SELADORES UV", "MASSAS UV", "FUNDO  ABRASIVO UV (TABER)", "VERNIZ  UV", "DILUENTES"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            </div>
-            <div>
-              <CardProducts icon={baldeTeste} title="resinas" list={["PISOS DE MADEIRA", "PISOS DE ALTO PADRÃO", "PISOS ISOLANTE ÁGUA", "PISOS OXIDO DE ALUMINIO"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            </div>
-            <div>
-              <CardProducts icon={baldeTeste} title="linha pu" list={["FUNDO PU", "PRIMER PU", "SELADORES PU", "ESMALTES PU", "VERNIZ PU", "DILUENTES PU"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            </div>
+          <Cards ref={allCards}>
+            <CardProducts icon={baldeTeste} title="linha pisos" list={["PISOS DE MADEIRA", "PISOS DE ALTO PADRÃO", "PISOS ISOLANTE ÁGUA", "PISOS OXIDO DE ALUMINIO"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+            <CardProducts icon={baldeTeste} title="linha wb" list={["ISOLANTES BASE ÁGUA", "PRIMER BASE ÁGUA", "TINGIDORES BASE ÁGUA"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+            <CardProducts icon={baldeTeste} title="tingidores" list={["PISOS DE MADEIRA", "PISOS DE ALTO PADRÃO", "PISOS ISOLANTE ÁGUA", "PISOS OXIDO DE ALUMINIO"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+            <CardProducts icon={baldeTeste} title="linha uv" list={["PRIMER’S UV", "TINGIDORES UV", "TINTAS DE IMPRESSÃO UV", "SELADORES UV", "MASSAS UV", "FUNDO  ABRASIVO UV (TABER)", "VERNIZ  UV", "DILUENTES"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+            <CardProducts icon={baldeTeste} title="resinas" list={["PISOS DE MADEIRA", "PISOS DE ALTO PADRÃO", "PISOS ISOLANTE ÁGUA", "PISOS OXIDO DE ALUMINIO"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+            <CardProducts icon={baldeTeste} title="linha pu" list={["FUNDO PU", "PRIMER PU", "SELADORES PU", "ESMALTES PU", "VERNIZ PU", "DILUENTES PU"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+
 
           </Cards>
         </SectionProducts>

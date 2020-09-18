@@ -27,11 +27,10 @@ function Sustainability() {
 
   useEffect(() => {
 
-    let tl = gsap.timeline({ defaults: { duration: 1 } });
-    tl.from(title.current, { y: -100, stagger: .6, opacity: 0 })
-      .from(wrapper.current, { x: 300, opacity: 0, duration: .5 })
-      .from(imgEarth.current, { opacity: 0 })
-      .from(infoText.current, { opacity: 0 });
+    gsap.from(title.current, { y: -100, stagger: .6, opacity: 0 });
+    gsap.from(wrapper.current, { x: 300, opacity: 0, duration: .5 });
+    gsap.from(imgEarth.current, { x: 300, opacity: 0, delay: .5 });
+    gsap.from(infoText.current, { opacity: 0, delay: .5 });
 
   }, []);
 
