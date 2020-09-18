@@ -1,20 +1,33 @@
 import React from 'react';
 
-import { Container } from './styles';
+import imgBalde from '../../assets/image/balde-tinta.jpg';
+
+import {
+  Card,
+  CardHeader,
+  CardBody
+} from './styles';
 
 function CardProducts({ icon, title, info, list }) {
+
   return (
-    <Container>
-      <h2>{title}</h2>
-      <img src={icon} alt={title} />
-      <p>{info}</p>
-      <div className="linha"></div>
-      <ul>
-        {list.map((value, index) => (
-          <li key={index}>{value}</li>
-        ))}
-      </ul>
-    </Container>
+    <Card>
+      <CardHeader>
+        <img src={icon} alt="Tinta" />
+        <h2>{title}</h2>
+      </CardHeader>
+      <CardBody>
+        <p>{info}</p>
+
+        <div className="line"></div>
+
+        <ul>
+          {list.map((value, index) => (
+            <li key={index}>{value}</li>
+          ))}
+        </ul>
+      </CardBody>
+    </Card>
   );
 }
 

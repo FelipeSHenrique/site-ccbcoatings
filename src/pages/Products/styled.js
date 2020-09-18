@@ -55,12 +55,13 @@ export const SectionProducts = styled.div`
 `;
 
 export const Cards = styled.div`
-  margin-top: 70px;
+  margin: 100px 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 51px;
+  column-gap: 51px;
+  row-gap: 71px;
 
-  @media (max-width: 1178px) {
+  @media (max-width: 1081px) {
     grid-template-columns: 1fr 1fr;
     padding: 0 2%;
   }

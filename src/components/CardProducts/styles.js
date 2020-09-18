@@ -1,75 +1,79 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Card = styled.div`
+    position: relative;
+    max-width: 320px;
+    padding: 20px;
+    box-shadow: 0 5px 202px rgba(0,0,0,0.3);
+`;
 
-    border: 2px solid var(--color-grey);
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    > h2 {
-        text-transform: uppercase;
+export const CardHeader = styled.div`
+    position: relative;
+    img {
         position: relative;
-
+        top: -50px;
+        max-width: 100%;
+        border-radius: 4px;
+    }
+    h2 {
+        position: relative;
+        top: -30px;
+        font-size: 25px;
+        font-weight: bold;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        
         &::before {
           content: '';
           position: absolute;
           top: 50%;
-          right: 100%;
-          display: inline-block;
-          top: 50%;
-          right: 100%;
+          right: 80%;
           display: inline-block;
           width: 40px;
           height: 4px;
-          margin-right: 14px;
-          background: var(--color-yellow);  
+          background: var(--color-yellow);
         }
-        
         &::after {
           content: '';
           position: absolute;
           top: 50%;
-          left: 100%;
+          left: 80%;
           display: inline-block;
           width: 40px;
           height: 4px;
-          margin-left: 14px;
           background: var(--color-yellow);
         }
     }
+    
+`;
 
-    > img {
-        margin-top: 32px;
-        height: 171px;
-        border-radius: 6px;
-    }
+export const CardBody = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  p {
+      font-size: 16px;
+      color: var(--color-info-text);
+      text-align: justify;
+  }
 
-    > p {
-        margin-top: 31px;
-        max-width: 245px;
-        color: var(--color-info-text);
-        text-align: center;
-    }
+  .line {
+      width: 100%;
+      height: 2px;
+      background: var(--color-grey);
+      margin: 20px 0;
+  }
 
-    > .linha {
-        margin-top: 20px;
-        width: 100%;
-        border-bottom: 2px solid var(--color-grey);
-    }
+  ul {
+      li {
+          list-style: circle;
+      }
 
-    > ul {
-        margin-top: 16px;
-        text-align: center;
-    }
-
-    > ul li {
-        position: relative;
-        text-transform: uppercase;
-        margin-top: 5px;
-        border-bottom: 2px solid var(--color-grey);
-        line-height: 2;
-    }
+      li + li {
+          margin-top: 10px;
+      }
+  }
 
 `;
+
