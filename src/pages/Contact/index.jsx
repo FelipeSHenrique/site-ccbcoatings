@@ -1,10 +1,12 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from "gsap";
 
 import HeaderLogo from '../../components/HeaderLogo';
 import Menu from '../../components/Menu';
 import Titles from '../../components/Titles';
 import FooterContact from '../../components/FooterContact';
+
+import api from '../../services/api';
 
 import {
   Container,
@@ -23,6 +25,27 @@ import {
 } from './styled';
 
 function Contact() {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  const submitRequest = async (e) => {
+    e.preventDefault();
+
+    api.post('access', {
+      name,
+      email,
+      subject,
+      message
+    }).then(() => {
+      alert('Menssagem enviado com sucesso!');
+    }).catch(() => {
+      alert('Erro no envio!');
+    });
+
+  };
 
   const title = useRef(null);
   const wrapperContact = useRef(null);
@@ -69,11 +92,36 @@ function Contact() {
 
           </WrapperInfoContact>
 
-          <WrapperForm ref={wrapperForm}>
-            <input type="text" placeholder="Nome" />
-            <input type="text" placeholder="Email" />
-            <input type="text" placeholder="Assunto" />
-            <textarea placeholder="Menssagem"></textarea>
+          <WrapperForm ref={wrapperForm} onSubmit={submitRequest}>
+            <input
+              type="text"
+              placeholder="Nome"
+              name="name"
+              onChange={e => setName(e.target.value)}
+              value={name}
+              required
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              name="email"
+              onChange={e => setEmail(e.target.value)}
+              value={email}
+            />
+            <input
+              type="text"
+              placeholder="Assunto"
+              name="subject"
+              onChange={e => setSubject(e.target.value)}
+              value={subject}
+            />
+            <textarea
+              placeholder="Menssagem"
+              name="message"
+              onChange={e => setMessage(e.target.value)}
+              value={message}
+            >
+            </textarea>
             <button type="submit">Enviar</button>
           </WrapperForm>
         </WrapperContainer>

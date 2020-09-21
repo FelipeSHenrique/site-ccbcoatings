@@ -1,7 +1,5 @@
 import React from 'react';
 
-import imgBalde from '../../assets/image/balde-tinta.jpg';
-
 import {
   Card,
   CardHeader,
