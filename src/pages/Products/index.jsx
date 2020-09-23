@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from "gsap";
+import { useTranslation } from 'react-i18next';
 
 import {
   Container,
@@ -18,6 +19,8 @@ import FooterContact from '../../components/FooterContact';
 
 function Products() {
 
+  const { t } = useTranslation();
+
   const allCards = useRef(null);
   const title = useRef(null);
 
@@ -35,22 +38,28 @@ function Products() {
       <WrapperAllContent>
         <SectionProducts>
           <div>
-            <Titles title="Produtos" subTitle="ccb coatings" />
+            <Titles title={t('textTitleProducts')} subTitle="ccb coatings" />
           </div>
           <Cards ref={allCards}>
-            <CardProducts icon={baldeTeste} title="linha pisos" list={["PISOS DE MADEIRA", "PISOS DE ALTO PADRÃO", "PISOS ISOLANTE ÁGUA", "PISOS OXIDO DE ALUMINIO"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            <CardProducts icon={baldeTeste} title="linha wb" list={["ISOLANTES BASE ÁGUA", "PRIMER BASE ÁGUA", "TINGIDORES BASE ÁGUA"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            <CardProducts icon={baldeTeste} title="tingidores" list={["PISOS DE MADEIRA", "PISOS DE ALTO PADRÃO", "PISOS ISOLANTE ÁGUA", "PISOS OXIDO DE ALUMINIO"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            <CardProducts icon={baldeTeste} title="linha uv" list={["PRIMER’S UV", "TINGIDORES UV", "TINTAS DE IMPRESSÃO UV", "SELADORES UV", "MASSAS UV", "FUNDO  ABRASIVO UV (TABER)", "VERNIZ  UV", "DILUENTES"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            <CardProducts icon={baldeTeste} title="resinas" list={["PISOS DE MADEIRA", "PISOS DE ALTO PADRÃO", "PISOS ISOLANTE ÁGUA", "PISOS OXIDO DE ALUMINIO"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
-            <CardProducts icon={baldeTeste} title="linha pu" list={["FUNDO PU", "PRIMER PU", "SELADORES PU", "ESMALTES PU", "VERNIZ PU", "DILUENTES PU"]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+            <CardProducts icon={baldeTeste} title={t('textCardFlooringLine')} list={t('textCardItemFlooringLine', { returnObjects: true })} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
 
+            <CardProducts icon={baldeTeste} title={t('textCardWb')} list={t('textCardItemWb', { returnObjects: true })} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+
+            <CardProducts icon={baldeTeste} title={t('textCardDyeing')} list={t('textCardItemDyeing', { returnObjects: true })} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+
+            <CardProducts icon={baldeTeste} title={t('textCardUv')} list={t('textCardItemUv', { returnObjects: true })} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+
+            <CardProducts icon={baldeTeste} title={t('textCardResin')} list={t('textCardItemResin', { returnObjects: true })} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+
+            <CardProducts icon={baldeTeste} title={t('textCardPu')} list={t('textCardItemPu', { returnObjects: true })} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
+
+            <CardProducts icon={baldeTeste} title={t('textCardGlassingLine')} list={[]} info="A linha pisos contém tecnologia canadence e diferencial nos seus acabamentos de alta resistencia, especializada em tintas e vernizes para madeira." />
 
           </Cards>
         </SectionProducts>
         <footer>
           <div className="gradiente">
-            <h1>RECEBA OS MELHORES PRODUTOS DA MAIOR QUALIDADE</h1>
+            <h1>{t('textMessageProducts')}</h1>
             <FooterContact />
           </div>
         </footer>

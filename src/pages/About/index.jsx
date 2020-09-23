@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from "gsap";
+import { useTranslation } from 'react-i18next';
 
 import HeaderLogo from '../../components/HeaderLogo';
 import Menu from '../../components/Menu';
@@ -21,6 +22,8 @@ import {
 
 function About() {
 
+  const { t } = useTranslation();
+
   const title = useRef(null);
   const wrapper = useRef(null);
 
@@ -38,7 +41,7 @@ function About() {
       <Menu />
       <WrapperAllContent>
         <div ref={title}>
-          <Titles title="sobre nós" subTitle="ccb coatings" />
+          <Titles title={t('textAboutUs')} subTitle="ccb coatings" />
         </div>
         <SectionAbout>
           <ContainerAbout>
@@ -46,9 +49,8 @@ function About() {
             <WrapperAbout ref={wrapper}>
 
               <InfoAbout>
-                <h3 >quem somos</h3>
-                <p >Há 30 anos a CCB Coatings uma das tops teen no mercado com tecnologia e soluções inovadoras no fornecimento de revestimentos em vernizes e tintas, para a indústria de móveis, pisos in wood, e em substratos diversos.
-                Não apenas dispomos da melhor tecnologia em nossos produtos, mas também as melhores soluções em aplicação, logística e suporte técnico.</p>
+                <h3>{t('textWhoWeAre')}</h3>
+                <p>{t('textContent')}</p>
               </InfoAbout>
 
               <InfoImage src={infoImage} alt="ccb coatings" />

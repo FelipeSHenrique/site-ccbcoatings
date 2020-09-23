@@ -97,6 +97,7 @@ export const WrapperForm = styled.form`
     color: var(--color-white);
     text-transform: uppercase;
     cursor: pointer;
+    outline: none;
   }
 
   @media (max-width: 768px) {

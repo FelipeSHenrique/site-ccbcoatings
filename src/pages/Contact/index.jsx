@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from "gsap";
+import { useAlert } from "react-alert";
+import { useTranslation } from 'react-i18next';
 
 import HeaderLogo from '../../components/HeaderLogo';
 import Menu from '../../components/Menu';
@@ -25,6 +27,9 @@ import {
 } from './styled';
 
 function Contact() {
+  const alert = useAlert();
+
+  const { t } = useTranslation();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -40,11 +45,15 @@ function Contact() {
       subject,
       message
     }).then(() => {
-      alert('Menssagem enviado com sucesso!');
+      alert.success(<div style={{ color: 'white' }}>Menssagem enviado com sucesso!</div>);
     }).catch(() => {
-      alert('Erro no envio!');
+      alert.error(<div style={{ color: 'white' }}>Erro no envio!</div>);
     });
 
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
   };
 
   const title = useRef(null);
@@ -66,7 +75,7 @@ function Contact() {
       <Menu />
       <WrapperAllContent>
         <div ref={title}>
-          <Titles title="contato" subTitle="ccb coatings" />
+          <Titles title={t('textTitleContact')} subTitle="ccb coatings" />
         </div>
 
         <WrapperContainer>
@@ -85,8 +94,7 @@ function Contact() {
             <LocationContact>
               <IconLocation />
               <TextInfo>
-                Rodovia do Caqui, 2443 <br />
-                Campina Grande do Sul - PR, 8343-000
+                {t('textAddressContact')}
               </TextInfo>
             </LocationContact>
 
@@ -95,7 +103,7 @@ function Contact() {
           <WrapperForm ref={wrapperForm} onSubmit={submitRequest}>
             <input
               type="text"
-              placeholder="Nome"
+              placeholder={t('textFormName')}
               name="name"
               onChange={e => setName(e.target.value)}
               value={name}
@@ -103,26 +111,26 @@ function Contact() {
             />
             <input
               type="text"
-              placeholder="Email"
+              placeholder={t('textFormEmail')}
               name="email"
               onChange={e => setEmail(e.target.value)}
               value={email}
             />
             <input
               type="text"
-              placeholder="Assunto"
+              placeholder={t('textFormSubject')}
               name="subject"
               onChange={e => setSubject(e.target.value)}
               value={subject}
             />
             <textarea
-              placeholder="Menssagem"
+              placeholder={t('textFormMessage')}
               name="message"
               onChange={e => setMessage(e.target.value)}
               value={message}
             >
             </textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit">{t('textFormButton')}</button>
           </WrapperForm>
         </WrapperContainer>
 

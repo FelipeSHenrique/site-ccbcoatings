@@ -23,27 +23,6 @@ export const CardHeader = styled.div`
         position: relative;
         text-align: center;
         text-transform: uppercase;
-        
-        &::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: 80%;
-          display: inline-block;
-          width: 40px;
-          height: 4px;
-          background: var(--color-yellow);
-        }
-        &::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 80%;
-          display: inline-block;
-          width: 40px;
-          height: 4px;
-          background: var(--color-yellow);
-        }
     }
     
 `;

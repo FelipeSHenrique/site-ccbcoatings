@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import {
   Container,
@@ -8,6 +9,7 @@ import {
 } from './styles';
 
 function MenuMobile() {
+  const { t } = useTranslation();
 
   const [open, setOpen] = useState(false);
 
@@ -21,19 +23,19 @@ function MenuMobile() {
       <WrapperMenuMobile open={open}>
         <ul>
           <li>
-            <Link to="/">início</Link>
+            <Link to="/">{t('textMenuHome')}</Link>
           </li>
           <li>
-            <Link to="/sobre">sobre</Link>
+            <Link to="/sobre">{t('textMenuAbout')}</Link>
           </li>
           <li>
-            <Link to="/produtos">produtos</Link>
+            <Link to="/produtos">{t('textMenuProducts')}</Link>
           </li>
           <li>
-            <Link to="/sustentabilidade">sustentabilidade</Link>
+            <Link to="/sustentabilidade">{t('textMenuSustainability')}</Link>
           </li>
           <li>
-            <Link to="/contato">contato</Link>
+            <Link to="/contato">{t('textMenuContact')}</Link>
           </li>
         </ul>
       </WrapperMenuMobile>

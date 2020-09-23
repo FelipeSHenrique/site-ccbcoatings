@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import {
   Container,
@@ -16,6 +17,9 @@ import {
 import logoCCB from '../../assets/image/logo-ccb.png';
 
 function FooterContact() {
+
+  const { t } = useTranslation();
+
   return (
     <Container>
 
@@ -25,8 +29,7 @@ function FooterContact() {
 
         <Address>
           <IconEarth />
-          <p>Rodovia do Caqui, 2443, Campina Grande do Sul - PR /
-          83430-000</p>
+          <p>{t('textAddress')}</p>
         </Address>
 
         <SocialNetWork>

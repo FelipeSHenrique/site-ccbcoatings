@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Marquee from 'react-marquee-slider';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from 'react-i18next';
 
 import {
   Container,
@@ -48,6 +49,8 @@ import logoCCB from '../../assets/image/logo-ccb.png';
 
 function Home() {
 
+  const { t } = useTranslation();
+
   const titulo = useRef(null);
   // Ref Animation
 
@@ -67,7 +70,7 @@ function Home() {
 
   useLayoutEffect(() => {
 
-    var words = ['revestimentos', 'tecnologia', 'eficiência', 'qualidade', 'sustentabilidade'];
+    var words = t('textHeaderHome', { returnObjects: true });
     var indexWord = 0;
     var indexChar = 0;
 
@@ -142,28 +145,28 @@ function Home() {
 
       <SectionProducts ref={sectionProd}>
         <div ref={title}>
-          <Titles title="o que nós fazemos" subTitle="nossos produtos" />
+          <Titles title={t('textTitlePageHomeWhatWeDo')} subTitle={t('textSubTitlePageHomeOurProducts')} />
         </div>
         <Cards>
           <div ref={card1}>
-            <CardHome icon={iconWB} title="linha base wb" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
+            <CardHome icon={iconWB} title={t('textCardWb')} info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
           </div>
           <div ref={card2}>
-            <CardHome icon={iconUV} title="linha uv" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
+            <CardHome icon={iconUV} title={t('textCardUv')} info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
           </div>
           <div ref={card3}>
-            <CardHome icon={iconPU} title="linha pu" info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
+            <CardHome icon={iconPU} title={t('textCardPu')} info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare aliquet diam, id mollis lacus egestas et." />
           </div>
         </Cards>
-        <Link to="/produtos">VER MAIS PRODUTOS</Link>
+        <Link to="/produtos">{t('textButtonSeeMoreProducts')}</Link>
       </SectionProducts>
 
       <SectionMessage ref={sectionMsg}>
 
         <GradientHorizontalMessage>
           <WrapperMessage ref={msgContent}>
-            <h2>perfeita</h2>
-            <h3>experiência <br /> & serviço de alta qualidade</h3>
+            <h2>{t('textMessagePerfect')}</h2>
+            <h3>{t('textMessageExperience')} <br /> {t('textMessageHighQualityService')}</h3>
           </WrapperMessage>
         </GradientHorizontalMessage>
 
@@ -176,7 +179,7 @@ function Home() {
 
             <div className="col-bg-title">
               <GradientHorizontalBg>
-                <h2>tecnologia</h2>
+                <h2>{t('textElementsTechnology')}</h2>
               </GradientHorizontalBg>
             </div>
 
@@ -196,7 +199,7 @@ function Home() {
 
             <div className="col-bg-title">
               <GradientHorizontalBg>
-                <h2>Qualidade</h2>
+                <h2>{t('textElementsQuality')}</h2>
               </GradientHorizontalBg>
             </div>
 
