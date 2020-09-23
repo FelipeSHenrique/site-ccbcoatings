@@ -69,7 +69,6 @@ function Home() {
   const card3 = useRef(null);
 
   useLayoutEffect(() => {
-
     var words = t('textHeaderHome', { returnObjects: true });
     var indexWord = 0;
     var indexChar = 0;
