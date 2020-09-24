@@ -68,29 +68,32 @@ function Home() {
   const card2 = useRef(null);
   const card3 = useRef(null);
 
-  useLayoutEffect(() => {
-    var words = t('textHeaderHome', { returnObjects: true });
-    var indexWord = 0;
-    var indexChar = 0;
+  let words = t('textHeaderHome', { returnObjects: true });
 
-    function run(el) {
-      setInterval(() => {
+  useLayoutEffect(() => {
+    let interval = null;
+    let indexWord = 0;
+    let indexChar = 0;
+
+    if (null !== titulo.current) {
+
+      interval = setInterval(() => {
         if (indexChar < words[indexWord].length) {
           indexChar++;
-          el.innerText = words[indexWord].substr(0, indexChar);
+          titulo.current.innerText = words[indexWord].substr(0, indexChar);
         } else if (indexWord < words.length - 1) {
           indexWord++; indexChar = 0;
         } else {
           indexWord = 0; indexChar = 0;
         }
       }, 200);
+
+    }
+    return () => {
+      clearInterval(interval);
     }
 
-    if (null !== titulo.current) {
-      run(titulo.current);
-    }
-
-  }, []);
+  }, [words]);
 
   // ANIMATION
 
