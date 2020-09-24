@@ -14,6 +14,9 @@ import Products from './pages/Products';
 import Sustainability from './pages/Sustainability';
 import Contact from './pages/Contact';
 
+import flagBr from './assets/image/icons/br.png';
+import flagEn from './assets/image/icons/gb.png';
+
 function App() {
   const [language, setLanguage] = useState('pt');
 
@@ -38,7 +41,11 @@ function App() {
         </Switch>
 
         <GlobalStyles />
-        <ButtonLanguage onClick={toogleLanguage}>PT/EN</ButtonLanguage>
+        <ButtonLanguage onClick={toogleLanguage}>
+          <img src={flagBr} alt="Portuguese" />
+          /
+          <img src={flagEn} alt="English" />
+        </ButtonLanguage>
       </Container>
     </BrowserRouter>
   );

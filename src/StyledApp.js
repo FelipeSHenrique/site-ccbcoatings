@@ -16,4 +16,13 @@ export const ButtonLanguage = styled.button`
   color: var(--color-white);
   cursor: pointer;
   outline: none;
+  
+  img {
+    &:nth-child(1) {
+      margin-right: 5px;
+    }
+    &:nth-child(2) {
+      margin-left: 5px;
+  }
+}
 `;
