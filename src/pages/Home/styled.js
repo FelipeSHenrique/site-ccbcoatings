@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import backgroundHeader from '../../assets/image/background-header.png';
 import backgroundMessage from '../../assets/image/background-message.png';
 import bgElements from '../../assets/image/bg-elements.png';
+import bgElements2 from '../../assets/image/bg-elements2.png';
 import bgCompanies from '../../assets/image/bg-em.png';
 
 
@@ -152,7 +153,7 @@ export const SectionMessage = styled.section`
 `;
 
 export const GradientHorizontalMessage = styled.div`
-  background: var(--color-transparent-weak);
+  background: rgba(0,0,0,0.83);
 `;
 
 export const WrapperMessage = styled.div`
@@ -253,6 +254,11 @@ export const SectionTecnology = styled.section`
 
 export const SectionQuality = styled(SectionTecnology)`
   margin-top: 51px;
+
+  .col-bg-title {
+    background-image: url(${bgElements2});
+  }
+
   .col-info {
     background: var(--color-green);
   }
